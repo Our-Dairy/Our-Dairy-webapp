@@ -8,6 +8,9 @@ const MarketPrice = lazy(() => import('../views/market/MarketPrice'));
 const Feeds = lazy(() => import('../views/feeds/Feeds'));
 const News = lazy(() => import('../views/news/News'));
 const Vet = lazy(() => import('../views/vet/Vet'));
+const Farmer = lazy(() => import('../views/farmer/Farmer'));
+const Vendor = lazy(() => import('../views/vendor/Vendor'));
+const Dairy = lazy(() => import('../views/dairy/Dairy'));
 const Dashboard = lazy(() => import('../views/dashboard/Dashboard'));
 const Reports = lazy(() => import('../views/reports/Reports'));
 const TransactionEntry = lazy(() => import('../views/transactions/TransactionEntry'));
@@ -31,6 +34,9 @@ export const APP_ROUTES: AppRoute[] = [
   { path: '/feeds', element: <Feeds />, nav: true, name: 'Feeds' },
   { path: '/news', element: <News />, nav: true, name: 'News' },
   { path: '/vet', element: <Vet /> },
+  { path: '/farmer', element: <Farmer /> },
+  { path: '/vendor', element: <Vendor /> },
+  { path: '/dairy', element: <Dairy /> },
   { path: '/dashboard', element: <Dashboard /> },
   { path: '/reports', element: <Reports /> },
   { path: '/transactions/entry', element: <TransactionEntry /> },

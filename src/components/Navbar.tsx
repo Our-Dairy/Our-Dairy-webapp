@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaArrowRight } from 'react-icons/fa';
+import { FaArrowRight, FaChevronDown } from 'react-icons/fa';
 import { NAVIGATION_ROUTES } from '../routes/config';
 import UserTypeModal from './UserTypeModal';
 import AnnouncementBanner from './home/AnnouncementBanner';
@@ -9,12 +9,34 @@ export default function Navbar() {
   const { pathname } = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUserTypeModalOpen, setIsUserTypeModalOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [pathname]);
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   const isActive = (path: string) => pathname === path;
+
+  const portalLinks = [
+    { path: '/farmer', name: 'Farmer' },
+    { path: '/vendor', name: 'Vendor' },
+    { path: '/dairy', name: 'Dairy' },
+    { path: '/vet', name: 'Our Vet +' },
+  ];
 
   return (
     <>
@@ -44,6 +66,35 @@ export default function Navbar() {
               </li>
             );
           })}
+          
+          {/* Our Apps Dropdown */}
+          <li className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+              className={`flex items-center gap-1 hover:text-gray-500/80 transition ${portalLinks.some(link => isActive(link.path)) ? 'text-green-500 font-medium' : ''}`}
+            >
+              Our Apps
+              <FaChevronDown className={`w-3 h-3 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+            </button>
+            
+            {isDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-30">
+                {portalLinks.map(link => {
+                  const active = isActive(link.path);
+                  return (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      onClick={() => setIsDropdownOpen(false)}
+                      className={`block px-4 py-2 text-sm hover:bg-green-50 transition ${active ? 'text-green-500 font-medium bg-green-50' : 'text-gray-700'}`}
+                    >
+                      {link.name}
+                    </Link>
+                  );
+                })}
+              </div>
+            )}
+          </li>
         </ul>
 
         {/* Get Started Button - Desktop */}
@@ -87,6 +138,27 @@ export default function Navbar() {
                 </li>
               );
             })}
+            
+            {/* Mobile Our Apps Section */}
+            <li className="pt-2 border-t border-gray-200">
+              <div className="text-sm font-semibold text-gray-700 mb-2">Our Apps</div>
+              <ul className="flex flex-col space-y-2 pl-4">
+                {portalLinks.map(link => {
+                  const active = isActive(link.path);
+                  return (
+                    <li key={link.path}>
+                      <Link
+                        to={link.path}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`text-sm ${active ? 'text-green-500 font-medium' : 'text-gray-600'}`}
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </li>
           </ul>
           <button
             type="button"
