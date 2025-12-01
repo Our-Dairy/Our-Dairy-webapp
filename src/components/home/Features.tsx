@@ -1,23 +1,25 @@
 import { FaExchangeAlt, FaFileInvoiceDollar, FaCreditCard } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
 
 export default function Features() {
+  const { t } = useTranslation()
   const features = [
     {
       icon: FaExchangeAlt,
-      title: "Transaction Management",
-      description: "Efficiently record and track daily milk transactions between sellers and dairy owners.",
+      title: t('features.transactionManagement.title'),
+      description: t('features.transactionManagement.description'),
       color: "bg-blue-50 border-blue-200 text-blue-600"
     },
     {
       icon: FaFileInvoiceDollar,
-      title: "Automated Billing",
-      description: "Generate accurate 15-day bills automatically with detailed transaction summaries.",
+      title: t('features.automatedBilling.title'),
+      description: t('features.automatedBilling.description'),
       color: "bg-green-50 border-green-200 text-green-600"
     },
     {
       icon: FaCreditCard,
-      title: "Payment Tracking",
-      description: "Monitor payment statuses and ensure timely settlements for all transactions.",
+      title: t('features.paymentTracking.title'),
+      description: t('features.paymentTracking.description'),
       color: "bg-purple-50 border-purple-200 text-purple-600"
     }
   ]
@@ -26,10 +28,10 @@ export default function Features() {
     <section aria-labelledby="features-heading" className="py-16 px-6 sm:px-10">
       <div className="max-w-7xl mx-auto">
         <h2 id="features-heading" className="text-3xl md:text-4xl font-semibold text-center text-gray-900">
-          Powerful Features
+          {t('features.title')}
         </h2>
         <p className="text-sm md:text-base text-slate-500 text-center mt-3 max-w-2xl mx-auto">
-          Everything you need to manage, track, and streamline your dairy operations, securely and efficiently.
+          {t('features.description')}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">

@@ -1,11 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaArrowRight, FaChevronDown } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 import { NAVIGATION_ROUTES } from '../routes/config';
 import UserTypeModal from './UserTypeModal';
 import AnnouncementBanner from './home/AnnouncementBanner';
+import LanguageSwitcher from './ui/LanguageSwitcher';
 
 export default function Navbar() {
+  const { t } = useTranslation();
   const { pathname } = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUserTypeModalOpen, setIsUserTypeModalOpen] = useState(false);
@@ -31,11 +34,22 @@ export default function Navbar() {
 
   const isActive = (path: string) => pathname === path;
 
+  const getRouteTranslation = (path: string, name?: string) => {
+    const translationMap: Record<string, string> = {
+      '/about': 'common.about',
+      '/market': 'common.market',
+      '/feeds': 'common.feeds',
+      '/news': 'common.news',
+    };
+    const key = translationMap[path];
+    return key ? t(key) : (name || '');
+  };
+
   const portalLinks = [
-    { path: '/farmer', name: 'Farmer' },
-    { path: '/vendor', name: 'Vendor' },
-    { path: '/dairy', name: 'Dairy' },
-    { path: '/vet', name: 'Our Vet +' },
+    { path: '/farmer', name: t('common.farmer') },
+    { path: '/vendor', name: t('common.vendor') },
+    { path: '/dairy', name: t('common.dairy') },
+    { path: '/vet', name: t('common.ourVet') },
   ];
 
   return (
@@ -46,7 +60,7 @@ export default function Navbar() {
         <Link to="/" className="flex items-center">
           <img
             src="/brand_logo.png"
-            alt="OUR Dairy"
+            alt={t('common.ourDairy')}
             className="h-14 w-auto object-contain"
           />
         </Link>
@@ -61,22 +75,22 @@ export default function Navbar() {
                   to={route.path}
                   className={`hover:text-gray-500/80 transition ${active ? 'text-green-500 font-medium' : ''}`}
                 >
-                  {route.name}
+                  {getRouteTranslation(route.path, route.name)}
                 </Link>
               </li>
             );
           })}
-          
+
           {/* Our Apps Dropdown */}
           <li className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               className={`flex items-center gap-1 hover:text-gray-500/80 transition ${portalLinks.some(link => isActive(link.path)) ? 'text-green-500 font-medium' : ''}`}
             >
-              Our Apps
+              {t('common.ourApps')}
               <FaChevronDown className={`w-3 h-3 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
             </button>
-            
+
             {isDropdownOpen && (
               <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-30">
                 {portalLinks.map(link => {
@@ -97,17 +111,20 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* Get Started Button - Desktop */}
-        <button
-          onClick={() => setIsUserTypeModalOpen(true)}
-          className="md:inline hidden relative bg-green-400 text-white ml-20 px-9 py-2 rounded-full active:scale-95 transition-all overflow-hidden group"
-        >
-          <span className="relative z-10 flex items-center gap-2">
-            Get started
-            <FaArrowRight className="w-4 h-4" />
-          </span>
-          <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-        </button>
+        {/* Language Switcher and Get Started Button - Desktop */}
+        <div className="md:flex hidden items-center gap-4">
+          <LanguageSwitcher />
+          <button
+            onClick={() => setIsUserTypeModalOpen(true)}
+            className="relative bg-green-400 text-white px-9 py-2 rounded-full active:scale-95 transition-all overflow-hidden group"
+          >
+            <span className="relative z-10 flex items-center gap-2">
+              {t('common.getStarted')}
+              <FaArrowRight className="w-4 h-4" />
+            </span>
+            <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+          </button>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -133,15 +150,15 @@ export default function Navbar() {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={`text-sm ${active ? 'text-green-500 font-medium' : ''}`}
                   >
-                    {route.name}
+                    {getRouteTranslation(route.path, route.name)}
                   </Link>
                 </li>
               );
             })}
-            
+
             {/* Mobile Our Apps Section */}
             <li className="pt-2 border-t border-gray-200">
-              <div className="text-sm font-semibold text-gray-700 mb-2">Our Apps</div>
+              <div className="text-sm font-semibold text-gray-700 mb-2">{t('common.ourApps')}</div>
               <ul className="flex flex-col space-y-2 pl-4">
                 {portalLinks.map(link => {
                   const active = isActive(link.path);
@@ -160,20 +177,23 @@ export default function Navbar() {
               </ul>
             </li>
           </ul>
-          <button
-            type="button"
-            onClick={() => {
-              setIsMobileMenuOpen(false)
-              setIsUserTypeModalOpen(true)
-            }}
-            className="relative bg-green-400 text-white mt-6 text-sm active:scale-95 transition-all w-40 h-11 rounded-full overflow-hidden group"
-          >
-            <span className="relative z-10 flex items-center justify-center gap-2">
-              Get started
-              <FaArrowRight className="w-3 h-3" />
-            </span>
-            <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-          </button>
+          <div className="mt-6 flex flex-col gap-3">
+            <LanguageSwitcher />
+            <button
+              type="button"
+              onClick={() => {
+                setIsMobileMenuOpen(false)
+                setIsUserTypeModalOpen(true)
+              }}
+              className="relative bg-green-400 text-white text-sm active:scale-95 transition-all w-40 h-11 rounded-full overflow-hidden group"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                {t('common.getStarted')}
+                <FaArrowRight className="w-3 h-3" />
+              </span>
+              <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+            </button>
+          </div>
         </div>
       </nav>
       <UserTypeModal

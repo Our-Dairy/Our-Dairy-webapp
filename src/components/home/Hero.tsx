@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
 import UserTypeModal from '../UserTypeModal'
 
 export default function Hero() {
+  const { t } = useTranslation()
   const [isUserTypeModalOpen, setIsUserTypeModalOpen] = useState(false)
 
   return (
@@ -11,14 +13,12 @@ export default function Hero() {
       <main className="flex flex-col max-md:gap-20 md:flex-row pb-20 items-center justify-between mt-20 px-4 md:px-16 lg:px-24 xl:px-32">
         <div className="flex flex-col items-center md:items-start">
           <h1 className="text-center md:text-left text-4xl leading-[46px] md:text-5xl md:leading-[68px] font-semibold max-w-xl text-slate-900">
-            OUR Dairy{' '}
-            <span className="text-green-500">Complete Dairy Management Platform</span>
+            {t('hero.title')}{' '}
+            <span className="text-green-500">{t('hero.subtitle')}</span>
           </h1>
 
           <p className="text-center md:text-left text-sm text-slate-700 max-w-lg mt-2">
-            An end-to-end platform that digitalizes and streamlines the entire milk supply chain,
-            connecting Admins, Dairies, Milk Vendors, and Farmers into one integrated ecosystem
-            with transparent workflows and efficient operations.
+            {t('hero.description')}
           </p>
 
           <div className="flex items-center gap-4 mt-8 text-sm">
@@ -27,7 +27,7 @@ export default function Hero() {
               onClick={() => setIsUserTypeModalOpen(true)}
             >
               <span className="relative z-10 flex items-center gap-2">
-                Get started
+                {t('common.getStarted')}
                 <FaArrowRight className="w-4 h-4" />
               </span>
               <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
@@ -40,14 +40,14 @@ export default function Hero() {
                 <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5" />
                 <rect x="2" y="6" width="14" height="12" rx="2" />
               </svg>
-              <span>Learn More</span>
+              <span>{t('common.learnMore')}</span>
             </Link>
           </div>
         </div>
 
         <img
           src="/hero.png"
-          alt="OUR Dairy"
+          alt={t('common.ourDairy')}
           className="max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl transition-all duration-300 rounded-tl-[6rem] rounded-br-[6rem]"
         />
       </main>

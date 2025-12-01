@@ -1,12 +1,15 @@
-import { StrictMode } from 'react'
+import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import { Toaster } from 'react-hot-toast'
+import './i18n'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
-    <Toaster position="top-right" />
+    <Suspense fallback={<div>Loading translations...</div>}>
+      <App />
+      <Toaster position="top-right" />
+    </Suspense>
   </StrictMode>,
 )

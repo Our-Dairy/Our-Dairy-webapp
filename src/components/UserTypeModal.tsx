@@ -1,28 +1,31 @@
+import { useTranslation } from 'react-i18next'
+
 interface UserTypeModalProps {
   isOpen: boolean
   onClose: () => void
 }
 
 export default function UserTypeModal({ isOpen, onClose }: UserTypeModalProps) {
+  const { t } = useTranslation()
   if (!isOpen) return null
 
   const userTypes = [
     {
-      name: 'Farmer',
+      name: t('userTypeModal.farmer.name'),
       url: 'http://localhost:5174/',
-      description: 'Manage your milk production and track transactions',
+      description: t('userTypeModal.farmer.description'),
       icon: '🐄'
     },
     {
-      name: 'Vendor',
+      name: t('userTypeModal.vendor.name'),
       url: 'http://localhost:5175/',
-      description: 'Sell milk and manage your vendor operations',
+      description: t('userTypeModal.vendor.description'),
       icon: '🚚'
     },
     {
-      name: 'Dairy',
+      name: t('userTypeModal.dairy.name'),
       url: 'http://localhost:5176/',
-      description: 'Manage dairy operations and milk collection',
+      description: t('userTypeModal.dairy.description'),
       icon: '🏭'
     }
   ]
@@ -37,11 +40,11 @@ export default function UserTypeModal({ isOpen, onClose }: UserTypeModalProps) {
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-semibold text-gray-900">Choose Your Role</h2>
+          <h2 className="text-2xl font-semibold text-gray-900">{t('userTypeModal.title')}</h2>
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-gray-600 transition"
-            aria-label="Close"
+            aria-label={t('common.close')}
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M18 6L6 18M6 6l12 12" />
@@ -49,7 +52,7 @@ export default function UserTypeModal({ isOpen, onClose }: UserTypeModalProps) {
           </button>
         </div>
 
-        <p className="text-gray-600 mb-6">Select how you want to access the platform:</p>
+        <p className="text-gray-600 mb-6">{t('userTypeModal.description')}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {userTypes.map((type) => (
