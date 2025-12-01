@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaGlobe, FaTruck } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 
 interface Dealer { 
   id: number; 
@@ -50,6 +51,7 @@ interface DealerCardProps {
 }
 
 function DealerCard({ dealer }: DealerCardProps) {
+  const { t } = useTranslation()
   const [visible, setVisible] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const divRef = useRef<HTMLDivElement>(null);
@@ -89,11 +91,11 @@ function DealerCard({ dealer }: DealerCardProps) {
         <h2 className="text-2xl font-bold text-gray-800 mb-1">{dealer.name}</h2>
         
         {/* Subtitle */}
-        <p className="text-sm text-green-500 font-medium mb-3">Trusted Feed Supplier</p>
+        <p className="text-sm text-green-500 font-medium mb-3">{t('common.trustedFeedSupplier')}</p>
         
         {/* Description */}
         <p className="text-sm text-gray-500 mb-6 px-2 leading-relaxed">
-          {dealer.description || 'Quality feed solutions for your dairy needs.'}
+          {dealer.description || t('common.qualityFeedSolutions')}
         </p>
         
         {/* Contact Information */}
@@ -135,7 +137,7 @@ function DealerCard({ dealer }: DealerCardProps) {
         >
           <span className="relative z-10 flex items-center justify-center gap-2">
             <FaGlobe className="size-4" />
-            <span>Visit Website</span>
+            <span>{t('common.visitWebsite')}</span>
           </span>
           <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
         </a>
@@ -145,11 +147,12 @@ function DealerCard({ dealer }: DealerCardProps) {
 }
 
 export default function DealerList() {
+  const { t } = useTranslation()
   return (
     <section className="mb-6">
       <div className="p-6">
         <h2 className="text-2xl font-semibold text-gray-900 mb-6 text-center">
-          Our Trusted Dealers
+          {t('common.ourTrustedDealers')}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {dealers.map((dealer) => (

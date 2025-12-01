@@ -1,51 +1,53 @@
 import { FaStethoscope, FaPills, FaUserMd, FaSearch, FaClipboardCheck, FaShieldAlt } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
 
 export default function Vet() {
+  const { t } = useTranslation()
   const features = [
     {
       icon: FaSearch,
-      title: 'Symptom-Based Medicine Finder',
-      description: 'Enter your animal\'s symptoms and get instant recommendations for appropriate medicines and treatments.',
+      title: t('vet.features.symptomFinder.title'),
+      description: t('vet.features.symptomFinder.description'),
       color: 'bg-blue-50 border-blue-200 text-blue-600'
     },
     {
       icon: FaUserMd,
-      title: 'Consult with Vet Doctors',
-      description: 'Connect with certified veterinary doctors for professional consultations and expert advice on animal health.',
+      title: t('vet.features.consult.title'),
+      description: t('vet.features.consult.description'),
       color: 'bg-green-50 border-green-200 text-green-600'
     },
     {
       icon: FaPills,
-      title: 'Comprehensive Medicine Database',
-      description: 'Access a vast database of medicines and treatments specifically designed for cows, buffaloes, and all farm animals.',
+      title: t('vet.features.medicineDatabase.title'),
+      description: t('vet.features.medicineDatabase.description'),
       color: 'bg-purple-50 border-purple-200 text-purple-600'
     },
     {
       icon: FaClipboardCheck,
-      title: 'Health Records Management',
-      description: 'Maintain detailed health records for all your animals, track treatments, and monitor recovery progress.',
+      title: t('vet.features.healthRecords.title'),
+      description: t('vet.features.healthRecords.description'),
       color: 'bg-orange-50 border-orange-200 text-orange-600'
     },
     {
       icon: FaShieldAlt,
-      title: 'Preventive Care Guidelines',
-      description: 'Get preventive care recommendations and vaccination schedules to keep your animals healthy and disease-free.',
+      title: t('vet.features.preventiveCare.title'),
+      description: t('vet.features.preventiveCare.description'),
       color: 'bg-red-50 border-red-200 text-red-600'
     },
     {
       icon: FaStethoscope,
-      title: 'Emergency Care Support',
-      description: 'Quick access to emergency care protocols and immediate veterinary assistance when your animals need urgent help.',
+      title: t('vet.features.emergencyCare.title'),
+      description: t('vet.features.emergencyCare.description'),
       color: 'bg-indigo-50 border-indigo-200 text-indigo-600'
     }
   ]
 
   const animals = [
-    'Cows',
-    'Buffaloes',
-    'Goats',
-    'Sheep',
-    'Poultry'
+    t('vet.animals.cows'),
+    t('vet.animals.buffaloes'),
+    t('vet.animals.goats'),
+    t('vet.animals.sheep'),
+    t('vet.animals.poultry')
   ]
 
   return (
@@ -54,15 +56,13 @@ export default function Vet() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 pt-20 pb-16">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Our Vet <span className="text-green-500">+</span>
+            {t('vet.title')}
           </h1>
           <p className="text-lg md:text-xl text-gray-700 mb-6">
-            Your comprehensive veterinary medicine app for all farm animals
+            {t('vet.subtitle')}
           </p>
           <p className="text-base text-gray-600 max-w-2xl mx-auto">
-            A specialized platform designed to help farmers and animal owners find the right medicines, 
-            consult with veterinary doctors, and manage animal health effectively. Login to access 
-            expert veterinary care for cows, buffaloes, and all your farm animals.
+            {t('vet.description')}
           </p>
         </div>
       </section>
@@ -71,10 +71,10 @@ export default function Vet() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-12">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-semibold text-center text-gray-900 mb-4">
-            Key Features
+            {t('vet.keyFeatures')}
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Everything you need to ensure the health and well-being of your farm animals
+            {t('vet.keyFeaturesDesc')}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -105,7 +105,7 @@ export default function Vet() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-12 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-semibold text-center text-gray-900 mb-4">
-            How It Works
+            {t('vet.howItWorks')}
           </h2>
           <div className="space-y-6 mt-8">
             <div className="flex items-start gap-4">
@@ -113,9 +113,9 @@ export default function Vet() {
                 1
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Login to Access</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('vet.steps.step1Title')}</h3>
                 <p className="text-gray-600">
-                  Create an account or login to access the veterinary app and all its features.
+                  {t('vet.steps.step1Desc')}
                 </p>
               </div>
             </div>
@@ -125,10 +125,9 @@ export default function Vet() {
                 2
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Find Medicine by Symptoms</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('vet.steps.step2Title')}</h3>
                 <p className="text-gray-600">
-                  Enter your animal's symptoms and get instant recommendations for appropriate medicines 
-                  and treatment options from our comprehensive database.
+                  {t('vet.steps.step2Desc')}
                 </p>
               </div>
             </div>
@@ -138,10 +137,9 @@ export default function Vet() {
                 3
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Consult with Vet Doctors</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('vet.steps.step3Title')}</h3>
                 <p className="text-gray-600">
-                  Schedule consultations with certified veterinary doctors for professional diagnosis, 
-                  treatment plans, and expert advice tailored to your animal's specific needs.
+                  {t('vet.steps.step3Desc')}
                 </p>
               </div>
             </div>
@@ -151,10 +149,9 @@ export default function Vet() {
                 4
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Manage Animal Health</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('vet.steps.step4Title')}</h3>
                 <p className="text-gray-600">
-                  Keep track of all your animals' health records, treatments, and medical history 
-                  in one convenient place for better care management.
+                  {t('vet.steps.step4Desc')}
                 </p>
               </div>
             </div>
@@ -166,10 +163,10 @@ export default function Vet() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-12">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-            For All Farm Animals
+            {t('vet.supportedAnimals')}
           </h2>
           <p className="text-gray-600 mb-8">
-            Our vet app supports comprehensive care for all types of farm animals
+            {t('vet.supportedAnimalsDesc')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {animals.map((animal, index) => (
@@ -188,14 +185,14 @@ export default function Vet() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-16">
         <div className="max-w-4xl mx-auto text-center bg-white rounded-xl p-8 shadow-sm border border-slate-200">
           <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-            Ready to Get Started?
+            {t('vet.readyToStart')}
           </h2>
           <p className="text-gray-600 mb-8">
-            Login to access the Our Vet + app and start managing your animals' health today
+            {t('vet.readyToStartDesc')}
           </p>
           <button className="relative bg-green-400 hover:bg-green-500 text-white py-3 px-8 rounded-full transition overflow-hidden group text-lg font-medium">
             <span className="relative z-10 flex items-center gap-2">
-              Login to Our Vet +
+              {t('vet.loginButton')}
               <FaStethoscope className="w-5 h-5" />
             </span>
             <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>

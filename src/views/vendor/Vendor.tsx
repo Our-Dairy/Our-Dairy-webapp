@@ -1,51 +1,53 @@
 import { FaUsers, FaTint, FaTruck, FaMoneyBillWave, FaMapMarkerAlt, FaClipboardCheck } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
 
 export default function Vendor() {
+  const { t } = useTranslation()
   const features = [
     {
       icon: FaUsers,
-      title: 'Farmer Management',
-      description: 'Manage all farmers assigned to you. View farmer details, contact information, and supply history.',
+      title: t('vendor.features.farmerManagement.title'),
+      description: t('vendor.features.farmerManagement.description'),
       color: 'bg-blue-50 border-blue-200 text-blue-600'
     },
     {
       icon: FaTint,
-      title: 'Milk Collection Recording',
-      description: 'Record daily milk collection from farmers with accurate quantity, quality readings (fat, SNF, CLR), and timings.',
+      title: t('vendor.features.milkCollection.title'),
+      description: t('vendor.features.milkCollection.description'),
       color: 'bg-green-50 border-green-200 text-green-600'
     },
     {
       icon: FaTruck,
-      title: 'Daily Supply Summary',
-      description: 'Track and summarize daily milk supply to your dairy. Maintain complete records of all transactions.',
+      title: t('vendor.features.dailySupply.title'),
+      description: t('vendor.features.dailySupply.description'),
       color: 'bg-purple-50 border-purple-200 text-purple-600'
     },
     {
       icon: FaMoneyBillWave,
-      title: 'Farmer Payment Ledger',
-      description: 'Manage payment logs for all farmers. Track payments, generate reports, and maintain transparent records.',
+      title: t('vendor.features.paymentLedger.title'),
+      description: t('vendor.features.paymentLedger.description'),
       color: 'bg-orange-50 border-orange-200 text-orange-600'
     },
     {
       icon: FaMapMarkerAlt,
-      title: 'Route & Timing Management',
-      description: 'Organize collection routes, manage timing schedules, and optimize your milk collection operations.',
+      title: t('vendor.features.routeManagement.title'),
+      description: t('vendor.features.routeManagement.description'),
       color: 'bg-red-50 border-red-200 text-red-600'
     },
     {
       icon: FaClipboardCheck,
-      title: 'Quality Verification',
-      description: 'Verify and record milk quality parameters including fat, SNF, and CLR readings for accurate rate calculation.',
+      title: t('vendor.features.qualityVerification.title'),
+      description: t('vendor.features.qualityVerification.description'),
       color: 'bg-indigo-50 border-indigo-200 text-indigo-600'
     }
   ]
 
   const responsibilities = [
-    'Collect milk from assigned farmers',
-    'Verify quality and quantity',
-    'Supply to dairy',
-    'Manage farmer payments',
-    'Maintain transparent records'
+    t('vendor.responsibilities.collect'),
+    t('vendor.responsibilities.verify'),
+    t('vendor.responsibilities.supply'),
+    t('vendor.responsibilities.payments'),
+    t('vendor.responsibilities.records')
   ]
 
   return (
@@ -54,15 +56,13 @@ export default function Vendor() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 pt-20 pb-16">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Milk Vendor <span className="text-green-500">Portal</span>
+            {t('vendor.title')}
           </h1>
           <p className="text-lg md:text-xl text-gray-700 mb-6">
-            Your operational hub for milk collection and supply management
+            {t('vendor.subtitle')}
           </p>
           <p className="text-base text-gray-600 max-w-2xl mx-auto">
-            A specialized platform designed to help milk vendors collect milk from farmers, 
-            verify quality, supply to dairies, and manage farmer payments. Login to access 
-            your vendor dashboard and streamline your operations.
+            {t('vendor.description')}
           </p>
         </div>
       </section>
@@ -71,10 +71,10 @@ export default function Vendor() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-12">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-semibold text-center text-gray-900 mb-4">
-            Key Features
+            {t('vendor.keyFeatures')}
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Everything you need to efficiently manage milk collection and supply operations
+            {t('vendor.keyFeaturesDesc')}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -105,7 +105,7 @@ export default function Vendor() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-12 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-semibold text-center text-gray-900 mb-4">
-            How It Works
+            {t('vendor.howItWorks')}
           </h2>
           <div className="space-y-6 mt-8">
             <div className="flex items-start gap-4">
@@ -113,9 +113,9 @@ export default function Vendor() {
                 1
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Login to Your Vendor Account</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('vendor.steps.step1Title')}</h3>
                 <p className="text-gray-600">
-                  Access your vendor dashboard by logging in with your credentials.
+                  {t('vendor.steps.step1Desc')}
                 </p>
               </div>
             </div>
@@ -125,10 +125,9 @@ export default function Vendor() {
                 2
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Collect Milk from Farmers</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('vendor.steps.step2Title')}</h3>
                 <p className="text-gray-600">
-                  Collect milk from your assigned farmers. Verify and record quantity, 
-                  quality readings (fat, SNF, CLR), and collection timings.
+                  {t('vendor.steps.step2Desc')}
                 </p>
               </div>
             </div>
@@ -138,10 +137,9 @@ export default function Vendor() {
                 3
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Supply to Dairy</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('vendor.steps.step3Title')}</h3>
                 <p className="text-gray-600">
-                  Supply collected milk to your assigned dairy. Maintain daily supply 
-                  summaries and complete transaction records.
+                  {t('vendor.steps.step3Desc')}
                 </p>
               </div>
             </div>
@@ -151,10 +149,9 @@ export default function Vendor() {
                 4
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Manage Farmer Payments</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('vendor.steps.step4Title')}</h3>
                 <p className="text-gray-600">
-                  Track and manage payment logs for all farmers. Generate payment reports 
-                  and maintain transparent payment records.
+                  {t('vendor.steps.step4Desc')}
                 </p>
               </div>
             </div>
@@ -166,10 +163,10 @@ export default function Vendor() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-12">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-            Your Key Responsibilities
+            {t('vendor.responsibilitiesTitle')}
           </h2>
           <p className="text-gray-600 mb-8">
-            As a milk vendor, you are the operational link between farmers and dairies
+            {t('vendor.responsibilitiesDesc')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {responsibilities.map((responsibility, index) => (
@@ -188,14 +185,14 @@ export default function Vendor() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-16">
         <div className="max-w-4xl mx-auto text-center bg-white rounded-xl p-8 shadow-sm border border-slate-200">
           <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-            Ready to Get Started?
+            {t('vendor.readyToStart')}
           </h2>
           <p className="text-gray-600 mb-8">
-            Login to access the Milk Vendor Portal and start managing your operations today
+            {t('vendor.readyToStartDesc')}
           </p>
           <button className="relative bg-green-400 hover:bg-green-500 text-white py-3 px-8 rounded-full transition overflow-hidden group text-lg font-medium">
             <span className="relative z-10 flex items-center gap-2">
-              Login to Vendor Portal
+              {t('vendor.loginButton')}
               <FaTruck className="w-5 h-5" />
             </span>
             <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>

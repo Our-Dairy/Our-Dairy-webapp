@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next'
+
 interface TestimonialCard {
   image: string;
   name: string;
@@ -5,26 +7,29 @@ interface TestimonialCard {
   text: string;
 }
 
-const testimonials: TestimonialCard[] = [
-  {
-    image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200',
-    name: 'Rajesh Kumar',
-    role: 'Dairy Owner',
-    text: 'I\'ve been using Our Dairy platform for nearly two years, and it has been incredibly user-friendly, making my daily transaction management much easier and more efficient.'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200',
-    name: 'Priya Sharma',
-    role: 'Milk Seller',
-    text: 'The automated billing system has transformed how I track my milk deliveries. Payment transparency and accuracy have improved significantly since using this platform.'
-  },
-  {
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop',
-    name: 'Sunita Devi',
-    role: 'Dairy Manager',
-    text: 'Our Dairy has streamlined our entire operation. The transaction recording and payment tracking features have made our dairy business more profitable and organized.'
-  },
-];
+export default function TestimonialSlider() {
+  const { t } = useTranslation()
+  
+  const testimonials: TestimonialCard[] = [
+    {
+      image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200',
+      name: 'Rajesh Kumar',
+      role: t('common.dairyOwner'),
+      text: t('testimonials.testimonial1')
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200',
+      name: 'Priya Sharma',
+      role: t('common.milkSeller'),
+      text: t('testimonials.testimonial2')
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop',
+      name: 'Sunita Devi',
+      role: t('common.dairyManager'),
+      text: t('testimonials.testimonial3')
+    },
+  ];
 
 const StarIcon = () => (
   <svg width="18" height="18" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +61,6 @@ const TestimonialCard = ({ testimonial }: { testimonial: TestimonialCard }) => (
   </div>
 );
 
-export default function TestimonialSlider() {
   return (
     <div className="flex flex-wrap items-center justify-center gap-6 pt-14">
       {testimonials.map((testimonial, index) => (

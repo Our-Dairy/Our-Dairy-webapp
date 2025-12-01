@@ -1,35 +1,35 @@
+import { useTranslation } from 'react-i18next'
+
 export default function AboutHero() {
+  const { t } = useTranslation()
   const features = [
     {
       icon: '⚡',
-      title: 'Lightning-Fast Transaction Recording',
-      description: 'Record daily milk transactions instantly with minimal load times and optimized performance.'
+      title: t('about.lightningFast.title'),
+      description: t('about.lightningFast.description')
     },
     {
       icon: '📊',
-      title: 'Automated Billing System',
-      description: 'Generate accurate 15-day cycle bills automatically with detailed transaction summaries.'
+      title: t('about.automatedBillingSystem.title'),
+      description: t('about.automatedBillingSystem.description')
     },
     {
       icon: '🔒',
-      title: 'Secure Payment Management',
-      description: 'Track payment statuses securely and ensure timely settlements for all stakeholders.'
+      title: t('about.securePayment.title'),
+      description: t('about.securePayment.description')
     }
   ]
 
   return (
     <section className="py-16 px-4">
       <h1 className="text-3xl md:text-4xl font-semibold text-center mx-auto text-gray-900">
-        About <span className="text-green-500">OUR Dairy</span>
+        {t('about.title')} <span className="text-green-500">{t('about.subtitle')}</span>
       </h1>
       <p className="text-base md:text-lg text-slate-600 text-center mt-4 max-w-3xl mx-auto leading-relaxed">
-        OUR Dairy is an end-to-end platform designed to digitalize and streamline 
-        the entire milk supply chain. It connects Admins, Dairies, Milk Vendors, and Farmers into one integrated 
-        ecosystem with role-based access and highly transparent workflows.
+        {t('about.description1')}
       </p>
       <p className="text-sm md:text-base text-slate-500 text-center mt-4 max-w-2xl mx-auto">
-        The system ensures efficient milk collection, supply tracking, payment handling, and relationship 
-        management between all stakeholders, creating a transparent, error-free, and traceable milk supply chain.
+        {t('about.description2')}
       </p>
 
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 px-4 md:px-0 py-10 relative">
@@ -42,10 +42,9 @@ export default function AboutHero() {
         />
 
         <div>
-          <h1 className="text-3xl font-semibold text-gray-900">Our Latest Features</h1>
+          <h1 className="text-3xl font-semibold text-gray-900">{t('about.latestFeatures')}</h1>
           <p className="text-sm text-slate-500 mt-2">
-            Streamline Dairy Operations Without the Complexity — Customizable, Scalable and User-Friendly 
-            Transaction Management Platform.
+            {t('about.latestFeaturesDescription')}
           </p>
 
           <div className="flex flex-col gap-10 mt-6">

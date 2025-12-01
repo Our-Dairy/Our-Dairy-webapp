@@ -1,51 +1,53 @@
 import { FaIndustry, FaUsers, FaChartBar, FaMoneyBillWave, FaClipboardList, FaTachometerAlt } from 'react-icons/fa'
+import { useTranslation } from 'react-i18next'
 
 export default function Dairy() {
+  const { t } = useTranslation()
   const features = [
     {
       icon: FaUsers,
-      title: 'Vendor Management',
-      description: 'Manage all vendors under your dairy. View vendor details, performance metrics, and supply records.',
+      title: t('dairy.features.vendorManagement.title'),
+      description: t('dairy.features.vendorManagement.description'),
       color: 'bg-blue-50 border-blue-200 text-blue-600'
     },
     {
       icon: FaIndustry,
-      title: 'Farmer Network Overview',
-      description: 'Get a comprehensive view of all farmers in your network through your vendors. Monitor supply trends and relationships.',
+      title: t('dairy.features.farmerNetwork.title'),
+      description: t('dairy.features.farmerNetwork.description'),
       color: 'bg-green-50 border-green-200 text-green-600'
     },
     {
       icon: FaClipboardList,
-      title: 'Milk Collection Reports',
-      description: 'View detailed milk collection reports with quality metrics (fat, SNF, CLR), quantity, and timings from all vendors.',
+      title: t('dairy.features.collectionReports.title'),
+      description: t('dairy.features.collectionReports.description'),
       color: 'bg-purple-50 border-purple-200 text-purple-600'
     },
     {
       icon: FaMoneyBillWave,
-      title: 'Vendor Payment Management',
-      description: 'Handle payment cycles for vendors. Track payments, generate reports, and maintain transparent financial records.',
+      title: t('dairy.features.paymentManagement.title'),
+      description: t('dairy.features.paymentManagement.description'),
       color: 'bg-orange-50 border-orange-200 text-orange-600'
     },
     {
       icon: FaChartBar,
-      title: 'Supply Analytics Dashboard',
-      description: 'Analyze supply trends, monitor performance metrics, and get insights to improve operational efficiency.',
+      title: t('dairy.features.analytics.title'),
+      description: t('dairy.features.analytics.description'),
       color: 'bg-red-50 border-red-200 text-red-600'
     },
     {
       icon: FaTachometerAlt,
-      title: 'Quality Monitoring',
-      description: 'Monitor milk quality parameters across all vendors. Track fat, SNF, and CLR readings for quality assurance.',
+      title: t('dairy.features.qualityMonitoring.title'),
+      description: t('dairy.features.qualityMonitoring.description'),
       color: 'bg-indigo-50 border-indigo-200 text-indigo-600'
     }
   ]
 
   const capabilities = [
-    'Central processing hub',
-    'Complete vendor oversight',
-    'Quality assurance',
-    'Performance analytics',
-    'Payment cycle management'
+    t('dairy.capabilities.central'),
+    t('dairy.capabilities.oversight'),
+    t('dairy.capabilities.quality'),
+    t('dairy.capabilities.analytics'),
+    t('dairy.capabilities.payment')
   ]
 
   return (
@@ -54,15 +56,13 @@ export default function Dairy() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 pt-20 pb-16">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Dairy <span className="text-green-500">Portal</span>
+            {t('dairy.title')}
           </h1>
           <p className="text-lg md:text-xl text-gray-700 mb-6">
-            Your central hub for milk processing and supply chain management
+            {t('dairy.subtitle')}
           </p>
           <p className="text-base text-gray-600 max-w-2xl mx-auto">
-            A specialized platform designed to help dairies manage vendors, monitor milk collection, 
-            track quality metrics, and handle payment cycles. Login to access your dairy dashboard 
-            and optimize your operations.
+            {t('dairy.description')}
           </p>
         </div>
       </section>
@@ -71,10 +71,10 @@ export default function Dairy() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-12">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-semibold text-center text-gray-900 mb-4">
-            Key Features
+            {t('dairy.keyFeatures')}
           </h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Everything you need to efficiently manage your dairy operations and supply chain
+            {t('dairy.keyFeaturesDesc')}
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -105,7 +105,7 @@ export default function Dairy() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-12 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-semibold text-center text-gray-900 mb-4">
-            How It Works
+            {t('dairy.howItWorks')}
           </h2>
           <div className="space-y-6 mt-8">
             <div className="flex items-start gap-4">
@@ -113,9 +113,9 @@ export default function Dairy() {
                 1
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Login to Your Dairy Account</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dairy.steps.step1Title')}</h3>
                 <p className="text-gray-600">
-                  Access your dairy dashboard by logging in with your credentials.
+                  {t('dairy.steps.step1Desc')}
                 </p>
               </div>
             </div>
@@ -125,10 +125,9 @@ export default function Dairy() {
                 2
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Manage Your Vendors</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dairy.steps.step2Title')}</h3>
                 <p className="text-gray-600">
-                  Oversee all vendors assigned to your dairy. Monitor their performance, 
-                  supply records, and manage vendor relationships.
+                  {t('dairy.steps.step2Desc')}
                 </p>
               </div>
             </div>
@@ -138,10 +137,9 @@ export default function Dairy() {
                 3
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Monitor Milk Collection</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dairy.steps.step3Title')}</h3>
                 <p className="text-gray-600">
-                  View detailed milk collection reports from all vendors. Track quantity, 
-                  quality metrics (fat, SNF, CLR), and collection timings.
+                  {t('dairy.steps.step3Desc')}
                 </p>
               </div>
             </div>
@@ -151,10 +149,9 @@ export default function Dairy() {
                 4
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Handle Payment Cycles</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dairy.steps.step4Title')}</h3>
                 <p className="text-gray-600">
-                  Manage payment cycles for all vendors. Track payments, generate reports, 
-                  and maintain transparent financial records.
+                  {t('dairy.steps.step4Desc')}
                 </p>
               </div>
             </div>
@@ -164,10 +161,9 @@ export default function Dairy() {
                 5
               </div>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Analyze Supply Trends</h3>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{t('dairy.steps.step5Title')}</h3>
                 <p className="text-gray-600">
-                  Use analytics dashboard to analyze supply trends, monitor performance metrics, 
-                  and get insights to improve operational efficiency.
+                  {t('dairy.steps.step5Desc')}
                 </p>
               </div>
             </div>
@@ -179,10 +175,10 @@ export default function Dairy() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-12">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-            Dairy Capabilities
+            {t('dairy.capabilitiesTitle')}
           </h2>
           <p className="text-gray-600 mb-8">
-            Act as a central processing and monitoring hub for your entire supply chain
+            {t('dairy.capabilitiesDesc')}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {capabilities.map((capability, index) => (
@@ -201,14 +197,14 @@ export default function Dairy() {
       <section className="px-4 md:px-16 lg:px-24 xl:px-32 py-16">
         <div className="max-w-4xl mx-auto text-center bg-white rounded-xl p-8 shadow-sm border border-slate-200">
           <h2 className="text-3xl font-semibold text-gray-900 mb-4">
-            Ready to Get Started?
+            {t('dairy.readyToStart')}
           </h2>
           <p className="text-gray-600 mb-8">
-            Login to access the Dairy Portal and start managing your operations today
+            {t('dairy.readyToStartDesc')}
           </p>
           <button className="relative bg-green-400 hover:bg-green-500 text-white py-3 px-8 rounded-full transition overflow-hidden group text-lg font-medium">
             <span className="relative z-10 flex items-center gap-2">
-              Login to Dairy Portal
+              {t('dairy.loginButton')}
               <FaIndustry className="w-5 h-5" />
             </span>
             <span className="absolute inset-0 bg-black transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
