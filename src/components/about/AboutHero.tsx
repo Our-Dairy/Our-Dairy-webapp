@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import bgVideo from '../../assets/bg.mp4'
 
 export default function AboutHero() {
   const { t } = useTranslation()
@@ -35,10 +36,13 @@ export default function AboutHero() {
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 px-4 md:px-0 py-10 relative">
         <div className="size-[520px] rounded-full absolute blur-[300px] -z-10 bg-green-50 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
 
-        <img 
-          className="max-w-sm w-full rounded-xl h-auto"
-          src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?q=80&w=830&h=844&auto=format&fit=crop"
-          alt="Dairy Operations" 
+        <video 
+          className="w-auto rounded-xl h-80 object-cover"
+          src={bgVideo}
+          autoPlay
+          muted
+          loop
+          playsInline
         />
 
         <div>

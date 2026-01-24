@@ -3,6 +3,8 @@ import { FaArrowRight } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 import Hero from '../../components/home/Hero'
 import Features from '../../components/home/Features'
+import VideoSection from '../../components/home/VideoSection'
+import OurAppsSection from '../../components/home/OurAppsSection'
 import TestimonialSlider from '../../components/home/TestimonialSlider'
 import UserTypeModal from '../../components/UserTypeModal'
 
@@ -14,9 +16,11 @@ export default function Home() {
     <div className="min-h-full">
       <Hero />
 
-      {/* Existing sections below */}
+      {/* Main content sections */}
       <div className="max-w-7xl mx-auto w-full px-6 sm:px-10 py-12">
         <Features />
+
+        <VideoSection />
 
         <section aria-labelledby="testimonial-heading" className="mb-16">
           <h2 id="testimonial-heading" className="text-3xl font-semibold text-center text-gray-900 mb-8">
@@ -25,6 +29,11 @@ export default function Home() {
           <TestimonialSlider />
         </section>
 
+
+        <OurAppsSection />
+
+
+        
 
         <section aria-labelledby="cta-heading" className="py-12">
           <div className='border-y border-dashed border-slate-200 w-full max-w-5xl mx-auto px-10 sm:px-16'>

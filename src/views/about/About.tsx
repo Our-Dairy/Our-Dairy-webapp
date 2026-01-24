@@ -1,4 +1,5 @@
 import AboutHero from '../../components/about/AboutHero'
+import StatsSection from '../../components/about/StatsSection'
 import Team from '../../components/about/Team'
 import ContactForm from '../../components/about/ContactForm'
 import { 
@@ -55,6 +56,8 @@ export default function About() {
       <AboutHero />
       
       <main className="max-w-7xl mx-auto px-6 sm:px-10 py-12">
+        <StatsSection />
+
         <section aria-labelledby="modules-heading" className="mb-16">
           <h2 id="modules-heading" className="text-3xl font-semibold text-center text-gray-900 mb-4">
             Platform Modules
