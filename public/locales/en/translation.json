@@ -45,8 +45,36 @@
     "launchingSoon": "We are launching our applications soon!",
     "stayTuned": "Stay tuned for updates!"
   },
+  "stats": {
+    "title": "Our Impact in Numbers",
+    "description": "Empowering dairy businesses across India with our comprehensive web and mobile solutions.",
+    "totalDownloads": "Total Downloads",
+    "activeUsers": "Active Users",
+    "mobileApps": "Mobile Apps",
+    "webApps": "Web Platforms",
+    "dairiesConnected": "Dairies Connected",
+    "transactionsProcessed": "Transactions Processed"
+  },
   "home": {
     "ctaText": "Start managing your dairy operations efficiently and join the growing OUR Dairy community."
+  },
+  "videoSection": {
+    "title": "See OUR Dairy in Action",
+    "description": "Watch how our platform revolutionizes dairy management with seamless integration and real-time tracking.",
+    "feature1Title": "Real-Time Tracking",
+    "feature1Desc": "Monitor milk collection, supply chain, and transactions in real-time across all stakeholders.",
+    "feature2Title": "Instant Processing",
+    "feature2Desc": "Lightning-fast transaction recording and automated billing generation within seconds.",
+    "feature3Title": "Secure & Reliable",
+    "feature3Desc": "Bank-grade security ensures all your data and payments are protected at all times."
+  },
+  "ourAppsSection": {
+    "title": "Download Our Apps",
+    "description": "Get our mobile apps for a seamless dairy management experience on the go. Available on iOS and Android.",
+    "farmerDesc": "Manage your milk production, track transactions, and receive payments easily.",
+    "vendorDesc": "Streamline milk collection routes, manage suppliers, and track deliveries.",
+    "dairyDesc": "Complete dairy operations management with billing, reports, and analytics.",
+    "vetDesc": "Connect with veterinary services for livestock health and emergency care."
   },
   "hero": {
     "title": "OUR Dairy",
@@ -338,6 +366,20 @@
       "sheep": "Sheep",
       "poultry": "Poultry"
     }
+  },
+  "milkPrices": {
+    "title": "Milk Prices",
+    "subtitle": "Compare milk prices from different dairies based on FAT & SNF",
+    "formula": "Price Formula",
+    "allTypes": "All Types",
+    "dairies": "Dairies",
+    "rateCards": "Rate Cards",
+    "activeCards": "active rate cards",
+    "viewChart": "View Full Price Chart",
+    "priceChart": "Complete Price Chart",
+    "noRates": "No Rate Cards Available",
+    "noRatesDesc": "No dairies have published their milk prices yet.",
+    "retry": "Retry"
   }
 }
 

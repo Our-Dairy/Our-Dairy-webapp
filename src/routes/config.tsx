@@ -5,6 +5,7 @@ import type { ReactElement } from 'react';
 const Home = lazy(() => import('../views/home/Home'));
 const About = lazy(() => import('../views/about/About'));
 const MarketPrice = lazy(() => import('../views/market/MarketPrice'));
+const MilkPrices = lazy(() => import('../views/prices/MilkPrices'));
 const Feeds = lazy(() => import('../views/feeds/Feeds'));
 const News = lazy(() => import('../views/news/News'));
 const Vet = lazy(() => import('../views/vet/Vet'));
@@ -31,6 +32,7 @@ export const APP_ROUTES: AppRoute[] = [
   { path: '/', element: <Home /> },
   { path: '/about', element: <About />, nav: true, name: 'About' },
   { path: '/market', element: <MarketPrice />, nav: true, name: 'Market' },
+  { path: '/milk-prices', element: <MilkPrices />, nav: true, name: 'Milk Prices' },
   { path: '/feeds', element: <Feeds />, nav: true, name: 'Feeds' },
   { path: '/news', element: <News />, nav: true, name: 'News' },
   { path: '/vet', element: <Vet /> },

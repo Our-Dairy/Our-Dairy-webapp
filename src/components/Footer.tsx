@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 import { NAVIGATION_ROUTES } from '../routes/config'
+import LOGO from '../assets/logowithname.png';
 
 export default function Footer() {
   const { t } = useTranslation()
@@ -23,11 +24,11 @@ export default function Footer() {
         <div className="w-full lg:max-w-96 mb-6 lg:mb-0">
           <Link to="/" className="flex items-center gap-2 sm:gap-3">
             <img
-              src="/brand_logo.png"
-              alt="OUR Dairy"
-              className="h-10 sm:h-12 md:h-14 w-auto object-contain"
+              src={LOGO}
+              alt={t('common.ourDairy')}
+              className="object-contain"
+              style={{ height: '88px', width: '240px' }}
             />
-            <span className="text-xl sm:text-2xl font-semibold text-gray-900">{t('common.ourDairy')}</span>
           </Link>
           <p className="mt-4 sm:mt-6 text-xs sm:text-sm">
             {t('footer.description')}

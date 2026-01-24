@@ -12,19 +12,19 @@ export default function TestimonialSlider() {
   
   const testimonials: TestimonialCard[] = [
     {
-      image: 'https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&w=200',
+      image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&h=200&auto=format&fit=crop',
       name: 'Rajesh Kumar',
       role: t('common.dairyOwner'),
       text: t('testimonials.testimonial1')
     },
     {
-      image: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200',
+      image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=200&h=200&auto=format&fit=crop',
       name: 'Priya Sharma',
       role: t('common.milkSeller'),
       text: t('testimonials.testimonial2')
     },
     {
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&h=200&auto=format&fit=crop',
+      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&h=200&auto=format&fit=crop',
       name: 'Sunita Devi',
       role: t('common.dairyManager'),
       text: t('testimonials.testimonial3')

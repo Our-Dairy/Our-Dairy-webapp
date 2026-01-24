@@ -7,6 +7,8 @@ import UserTypeModal from './UserTypeModal';
 import AnnouncementBanner from './home/AnnouncementBanner';
 import LanguageSwitcher from './ui/LanguageSwitcher';
 
+import LOGO from '../assets/logowithname.png';
+
 export default function Navbar() {
   const { t } = useTranslation();
   const { pathname } = useLocation();
@@ -38,6 +40,7 @@ export default function Navbar() {
     const translationMap: Record<string, string> = {
       '/about': 'common.about',
       '/market': 'common.market',
+      '/milk-prices': 'milkPrices.title',
       '/feeds': 'common.feeds',
       '/news': 'common.news',
     };
@@ -59,9 +62,10 @@ export default function Navbar() {
         {/* Logo */}
         <Link to="/" className="flex items-center">
           <img
-            src="/brand_logo.png"
+            src={LOGO}
             alt={t('common.ourDairy')}
-            className="h-14 w-auto object-contain"
+            className="object-contain"
+            style={{ height: '56px', width: '140px' }}
           />
         </Link>
 
