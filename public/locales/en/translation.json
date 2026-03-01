@@ -1,6 +1,6 @@
 {
   "common": {
-    "ourDairy": "OUR Dairy",
+    "ourDairy": "Dairy Konnect",
     "getStarted": "Get started",
     "learnMore": "Learn More",
     "home": "Home",
@@ -16,7 +16,7 @@
     "contactUs": "Contact Us",
     "company": "Company",
     "getInTouch": "Get in touch",
-    "copyright": "Copyright {{year}} © Our Dairy. All Right Reserved.",
+    "copyright": "Copyright {{year}} © Dairy Konnect. All Right Reserved.",
     "loading": "Loading translations...",
     "close": "Close",
     "testimonials": "Testimonials",
@@ -56,10 +56,10 @@
     "transactionsProcessed": "Transactions Processed"
   },
   "home": {
-    "ctaText": "Start managing your dairy operations efficiently and join the growing OUR Dairy community."
+    "ctaText": "Start managing your dairy operations efficiently and join the growing Dairy Konnect community."
   },
   "videoSection": {
-    "title": "See OUR Dairy in Action",
+    "title": "See Dairy Konnect in Action",
     "description": "Watch how our platform revolutionizes dairy management with seamless integration and real-time tracking.",
     "feature1Title": "Real-Time Tracking",
     "feature1Desc": "Monitor milk collection, supply chain, and transactions in real-time across all stakeholders.",
@@ -77,7 +77,7 @@
     "vetDesc": "Connect with veterinary services for livestock health and emergency care."
   },
   "hero": {
-    "title": "OUR Dairy",
+    "title": "Dairy Konnect",
     "subtitle": "Complete Dairy Management Platform",
     "description": "An end-to-end platform that digitalizes and streamlines the entire milk supply chain, connecting Admins, Dairies, Milk Vendors, and Farmers into one integrated ecosystem with transparent workflows and efficient operations."
   },
@@ -99,8 +99,8 @@
   },
   "about": {
     "title": "About",
-    "subtitle": "OUR Dairy",
-    "description1": "OUR Dairy is an end-to-end platform designed to digitalize and streamline the entire milk supply chain. It connects Admins, Dairies, Milk Vendors, and Farmers into one integrated ecosystem with role-based access and highly transparent workflows.",
+    "subtitle": "Dairy Konnect",
+    "description1": "Dairy Konnect is an end-to-end platform designed to digitalize and streamline the entire milk supply chain. It connects Admins, Dairies, Milk Vendors, and Farmers into one integrated ecosystem with role-based access and highly transparent workflows.",
     "description2": "The system ensures efficient milk collection, supply tracking, payment handling, and relationship management between all stakeholders, creating a transparent, error-free, and traceable milk supply chain.",
     "latestFeatures": "Our Latest Features",
     "latestFeaturesDescription": "Streamline Dairy Operations Without the Complexity — Customizable, Scalable and User-Friendly Transaction Management Platform.",
@@ -137,9 +137,9 @@
     "description": "An end-to-end platform that digitalizes and streamlines the entire milk supply chain, connecting Admins, Dairies, Milk Vendors, and Farmers into one integrated ecosystem with transparent workflows and efficient operations."
   },
   "testimonials": {
-    "testimonial1": "I've been using Our Dairy platform for nearly two years, and it has been incredibly user-friendly, making my daily transaction management much easier and more efficient.",
+    "testimonial1": "I've been using Dairy Konnect platform for nearly two years, and it has been incredibly user-friendly, making my daily transaction management much easier and more efficient.",
     "testimonial2": "The automated billing system has transformed how I track my milk deliveries. Payment transparency and accuracy have improved significantly since using this platform.",
-    "testimonial3": "Our Dairy has streamlined our entire operation. The transaction recording and payment tracking features have made our dairy business more profitable and organized."
+    "testimonial3": "Dairy Konnect has streamlined our entire operation. The transaction recording and payment tracking features have made our dairy business more profitable and organized."
   },
   "farmer": {
     "title": "Farmer Portal",

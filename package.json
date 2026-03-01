@@ -1,10 +1,11 @@
 {
-  "name": "ourdairy-web-app",
+  "name": "dairy-konnect-web-app",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --port 5173",
+    "start":"vite --port 5173",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

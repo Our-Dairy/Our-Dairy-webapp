@@ -49,12 +49,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   // Persist theme preference to localStorage
   useEffect(() => {
-    localStorage.setItem('ourdairy-theme-mode', themeConfig.mode)
+    localStorage.setItem('dairy-konnect-theme-mode', themeConfig.mode)
   }, [themeConfig.mode])
 
   // Load theme preference from localStorage on mount
   useEffect(() => {
-    const savedTheme = localStorage.getItem('ourdairy-theme-mode') as ThemeMode
+    const savedTheme = localStorage.getItem('dairy-konnect-theme-mode') as ThemeMode
     if (savedTheme && (savedTheme === 'light' || savedTheme === 'dark')) {
       dispatch(setThemeMode(savedTheme))
     }

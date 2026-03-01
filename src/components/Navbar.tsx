@@ -7,7 +7,7 @@ import UserTypeModal from './UserTypeModal';
 import AnnouncementBanner from './home/AnnouncementBanner';
 import LanguageSwitcher from './ui/LanguageSwitcher';
 
-import LOGO from '../assets/logowithname.png';
+import LOGO from '../assets/logo.png';
 
 export default function Navbar() {
   const { t } = useTranslation();

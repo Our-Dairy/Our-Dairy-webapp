@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa'
 import { useTranslation } from 'react-i18next'
 import { NAVIGATION_ROUTES } from '../routes/config'
-import LOGO from '../assets/logowithname.png';
+import LOGO from '../assets/logo.png';
 
 export default function Footer() {
   const { t } = useTranslation()

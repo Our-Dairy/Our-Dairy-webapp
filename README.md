@@ -2,7 +2,7 @@
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## OurDairy Migration Notes
+## Dairy Konnect Migration Notes
 
 UI from the legacy `OD-CLIENT` project is being migrated. Routing structure added (react-router-dom). Install dependencies:
 

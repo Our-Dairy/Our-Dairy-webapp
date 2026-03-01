@@ -1,5 +1,5 @@
 /**
- * Pricing Service for OurDairy WebApp
+ * Pricing Service for Dairy Konnect WebApp
  * Fetches public milk pricing data from various dairies
  */
 
